@@ -10,7 +10,7 @@
 #
 # https://caddyserver.com/docs/caddyfile/concepts#addresses
 
-http://:8339 {
+http://:30001 {
 	# Set this path to your site's directory.
 	root * /usr/share/caddy
 

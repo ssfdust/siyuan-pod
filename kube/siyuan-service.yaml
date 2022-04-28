@@ -5,10 +5,12 @@ metadata:
   labels:
     app: siyuan
 spec:
+  type: LoadBalancer
   ports:
   - name: "siyuan"
-    port: 8339
-    targetPort: 8339
+    nodePort: 30001
+    port: 30001
+    targetPort: 30001
   selector:
     app: siyuan
 status:
