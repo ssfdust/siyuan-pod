@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: siyuan
+  labels:
+    app: siyuan
+spec:
+  ports:
+  - name: "siyuan"
+    port: 8339
+    targetPort: 8339
+  selector:
+    app: siyuan
+status:
+  loadBalancer: {}

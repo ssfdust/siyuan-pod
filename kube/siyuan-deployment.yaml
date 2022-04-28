@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: siyuan-deployment
+  labels:
+    app: siyuan
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: siyuan
+  template:
+    metadata:
+      labels:
+        app: siyuan
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 985
+        fsGroup: 985
+      containers:
+      - name: siyuan
+        image: docker.io/b3log/siyuan:v2.0.2
+        command: ["/opt/siyuan/kernel"]
+        args: ["--workspace", "/home/ssfdust/Documents/SiYuan"]
+        volumeMounts:
+        - name: workspace
+          mountPath: /home/ssfdust/Documents/SiYuan
+      - name: caddy
+        image: docker.io/ssfdust/siyuan-pod:042801
+      volumes:
+      - name: workspace
+        hostPath:
+          path: /home/ssfdust/Documents/SiYuan

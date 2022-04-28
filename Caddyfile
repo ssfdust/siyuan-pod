@@ -1,0 +1,22 @@
+# The Caddyfile is an easy way to configure your Caddy web server.
+#
+# https://caddyserver.com/docs/caddyfile
+#
+# The configuration below serves a welcome page over HTTP on port 80.
+# To use your own domain name (with automatic HTTPS), first make
+# sure your domain's A/AAAA DNS records are properly pointed to
+# this machine's public IP, then replace the line below with your
+# domain name.
+#
+# https://caddyserver.com/docs/caddyfile/concepts#addresses
+
+http://:8339 {
+	# Set this path to your site's directory.
+	root * /usr/share/caddy
+
+	# Enable the static file server.
+	file_server
+
+	# Another common task is to set up a reverse proxy:
+	reverse_proxy localhost:6806
+}
