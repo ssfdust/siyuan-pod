@@ -8,9 +8,9 @@ spec:
   type: LoadBalancer
   ports:
   - name: "siyuan"
-    nodePort: 30001
-    port: 30001
-    targetPort: 30001
+    nodePort: 6809
+    port: 6809
+    targetPort: 6809
   selector:
     app: siyuan
 status:

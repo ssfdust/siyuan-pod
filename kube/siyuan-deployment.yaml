@@ -27,7 +27,7 @@ spec:
         - name: workspace
           mountPath: /home/ssfdust/Documents/SiYuan
       - name: caddy
-        image: docker.io/ssfdust/siyuan-pod:042802
+        image: docker.io/ssfdust/siyuan-pod:042803
       volumes:
       - name: workspace
         hostPath:
