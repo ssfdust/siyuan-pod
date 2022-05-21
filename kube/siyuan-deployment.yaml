@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: siyuan-deployment
+  name: siyuan
   labels:
     app: siyuan
 spec:
@@ -20,7 +20,7 @@ spec:
         fsGroup: 985
       containers:
       - name: siyuan
-        image: docker.io/b3log/siyuan:v2.0.9
+        image: docker.io/b3log/siyuan:v2.0.11
         command: ["/opt/siyuan/kernel"]
         args: ["--workspace", "/home/ssfdust/Documents/SiYuan"]
         volumeMounts:
